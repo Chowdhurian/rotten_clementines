@@ -1,4 +1,15 @@
 <%= form_for @material do |f| %>
+  <% if @material.errors.any? %>
+    <div>
+      <%= pluralize(@material.errors.count, "error") %> prevented this material from being submitted:
+      <ul>
+        <% @material.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
   <div>
     <%= f.label :title %><br>
     <%= f.text_field :title %>
