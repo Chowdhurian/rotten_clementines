@@ -1,8 +1,12 @@
 RottenClementines::Application.routes.draw do
+  get "users/new"
+  get "users/create"
+
   resources :materials
+  resources :users, only: [:new, :create]
 
   root to: 'materials#index'
-  
+
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
