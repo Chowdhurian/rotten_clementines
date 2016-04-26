@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 
     if @user.save
       session[:user_id] = @user.id
-      redirect_to materials_path
+      redirect_to materials_path, notice: "Welcome aboard, #{@user.email}!"
     else
       render :new
     end

@@ -26,4 +26,7 @@ RottenClementines::Application.configure do
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
   config.assets.debug = true
+
+  # fix for changes sometimes not taking effect...
+  config.reload_classes_on_change = false
 end

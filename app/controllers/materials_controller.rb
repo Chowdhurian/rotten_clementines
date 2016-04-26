@@ -19,7 +19,7 @@ class MaterialsController < ApplicationController
     @material = Material.new(material_params)
 
     if @material.save
-      redirect_to materials_path
+      redirect_to materials_path, notice: "#{@material.title} was submitted successfully!"
     else
       render :new
     end
