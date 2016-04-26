@@ -1,7 +1,5 @@
 RottenClementines::Application.routes.draw do
 
-  get "reviews/new"
-  get "reviews/create"
   resources :materials do
     resources :reviews, only: [:new, :create]
   end

@@ -4,8 +4,9 @@
 <% @materials.each do |material| %>
   <%= link_to image_tag(material.poster_image_url), material_path(material) %>
   <h2><%= link_to material.title, material_path(material) %></h2>
-  <h3><%= material.release_date %></h3>
+  <h3><%= formatted_date(material.release_date) %></h3>
   <h4>Dir. <%= material.director %> | <%= material.runtime_in_minutes %> minutes</h4>
   <p><%= material.description %></p>
+  <p>Average rating<%= material.review_average %>/10</p>
   <hr>
 <% end %>

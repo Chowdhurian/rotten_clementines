@@ -1,11 +1,13 @@
 class ReviewsController < ApplicationController
+
+  before_filter :load_material
+  before_filter :restrict_access
+
   def new
-    @material = Material.find(params[:material_id])
     @review = @material.reviews.build
   end
 
   def create
-    @material = Material.find(params[:material_id])
     @review = @material.reviews.build(review_params)
     @review.user_id = current_user.id
 
@@ -17,6 +19,10 @@ class ReviewsController < ApplicationController
   end
 
   protected
+
+  def load_material
+    @material = Material.find(params[:material_id])
+  end
 
   def review_params
     params.require(:review).permit(:text, :rating_out_of_ten)
