@@ -1,6 +1,11 @@
 RottenClementines::Application.routes.draw do
 
-  resources :materials
+  get "reviews/new"
+  get "reviews/create"
+  resources :materials do
+    resources :reviews, only: [:new, :create]
+  end
+
   resources :users, only: [:new, :create]
 
   resources :sessions, only: [:new, :create, :destroy]
