@@ -1,0 +1,7 @@
+<%= link_to "Back to all materials", materials_path %><br/>
+
+<%= link_to image_tag(@material.poster_image_url), material_path(@material) %>
+<h2><%= @material.title %> (<%= link_to "edit", edit_material_path(@material) %>, <%= link_to "delete", material_path(@material), method: :delete, data: {confirm: "Are you sure you'd like to delete this?"} %>)</h2>
+<h3><%= @material.release_date %></h3>
+<h4>Dir. <%= @material.director %> | <%= @material.runtime_in_minutes %> minutes</h4>
+<p><%= @material.description %></p>
