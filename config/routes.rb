@@ -1,9 +1,11 @@
 RottenClementines::Application.routes.draw do
-  get "users/new"
-  get "users/create"
 
+  get "sessions/new"
+  get "sessions/create"
   resources :materials
   resources :users, only: [:new, :create]
+
+  resources :sessions, only: [:new, :create]
 
   root to: 'materials#index'
 

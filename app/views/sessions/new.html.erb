@@ -1,0 +1,12 @@
+<h1>log in</h1>
+<%= form_tag sessions_path do %>
+  <div>
+    <%= label_tag :email, "email" %><br/>
+    <%= text_field_tag :email %>
+  </div>
+  <div>
+    <%= label_tag :password, "password" %><br/>
+    <%= password_field_tag :password %>
+  </div>
+  <div><%= submit_tag "log in" %></div>
+<% end %>
