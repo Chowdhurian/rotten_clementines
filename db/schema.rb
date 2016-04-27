@@ -11,17 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160426190419) do
+ActiveRecord::Schema.define(version: 20160427014554) do
 
   create_table "materials", force: true do |t|
     t.string   "title"
     t.string   "director"
     t.integer  "runtime_in_minutes"
     t.text     "description"
-    t.string   "poster_image_url"
     t.datetime "release_date"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "poster_image"
   end
 
   create_table "reviews", force: true do |t|

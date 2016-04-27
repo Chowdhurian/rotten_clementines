@@ -37,6 +37,10 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 
 gem 'pry'
 
+# for uploading and resizing images
+gem 'carrierwave', '~> 0.10.0'
+gem 'mini_magick', '~> 4.3'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 

@@ -2,7 +2,7 @@
 <%= link_to "Submit a film, short or television show!", new_material_path %>
 <hr>
 <% @materials.each do |material| %>
-  <%= link_to image_tag(material.poster_image_url), material_path(material) %>
+  <%= image_tag material.poster_image.thumbnail.url %>
   <h2><%= link_to material.title, material_path(material) %></h2>
   <h3><%= formatted_date(material.release_date) %></h3>
   <h4>Dir. <%= material.director %> | <%= material.runtime_in_minutes %> minutes</h4>
