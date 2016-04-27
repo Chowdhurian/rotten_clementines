@@ -28,5 +28,5 @@ RottenClementines::Application.configure do
   config.assets.debug = true
 
   # fix for changes sometimes not taking effect...
-  # config.reload_classes_on_change = false
+  config.reload_classes_only_on_change = false
 end
