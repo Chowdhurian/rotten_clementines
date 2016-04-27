@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
 
   validates :email, presence: true
 
+  paginates_per 1
+
   def full_name
     "#{firstname} #{lastname}"
   end

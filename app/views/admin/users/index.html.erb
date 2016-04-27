@@ -1,5 +1,6 @@
 <h1>Rotten Clementines</h1>
+<%= paginate @users %>
 <% @users.each do |user| %>
-  <h4>email: <%= user.email %>
+  <h4>email: <%= user.email %></h4>
   <hr>
 <% end %>

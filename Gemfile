@@ -41,6 +41,9 @@ gem 'pry'
 gem 'carrierwave', '~> 0.10.0'
 gem 'mini_magick', '~> 4.3'
 
+# for pagination
+gem 'kaminari'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
