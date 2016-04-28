@@ -1,6 +1,10 @@
 class MaterialsController < ApplicationController
   def index
-    @materials = Material.all
+    @materials = Material.all.order("created_at DESC")
+
+    if params[:search]
+      @materials = Material.search(params[:search]).order("created_at DESC")
+    end
   end
 
   def show
@@ -16,9 +20,6 @@ class MaterialsController < ApplicationController
   end
 
   def create
-    # params_to_be_used = material_params
-    # remove_image_value = material_params[:remove_image]
-    # params_to_be_used.delete(:remove_image)
     @material = Material.new(params_to_be_used)
 
     if @material.save
@@ -31,11 +32,8 @@ class MaterialsController < ApplicationController
   def update
     @material = Material.find(params[:id])
 
-    # params_to_be_used = material_params
-    # remove_image_value = material_params[:remove_image]
-    # params_to_be_used.delete(:remove_image)
     if @material.update_attributes(material_params)
-      redirect_to material_path(@material)
+      redirect_to material_path(@material), notice: "#{@material.title} was edited successfully!"
     else
       render :edit
     end

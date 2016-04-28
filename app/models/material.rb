@@ -28,6 +28,10 @@ class Material < ActiveRecord::Base
     reviews.sum(:rating_out_of_ten)/reviews.size unless reviews.size == 0
   end
 
+  def self.search(search_params)
+    Material.where("title LIKE ? OR director LIKE ?", "%#{search_params}%", "%#{search_params}%")
+  end
+
   protected
 
   def release_date_is_in_the_past

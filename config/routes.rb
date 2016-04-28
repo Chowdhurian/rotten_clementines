@@ -1,5 +1,7 @@
 RottenClementines::Application.routes.draw do
 
+  get '/search', to: 'materials#index'
+
   resources :materials do
     resources :reviews, only: [:new, :create]
   end
@@ -13,8 +15,6 @@ RottenClementines::Application.routes.draw do
   namespace :admin do
     resources :users, only: [:index, :destroy]
   end
-
-  # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'

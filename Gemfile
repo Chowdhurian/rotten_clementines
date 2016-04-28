@@ -44,6 +44,10 @@ gem 'mini_magick', '~> 4.3'
 # for pagination
 gem 'kaminari'
 
+# for search functionality
+# gem 'sunspot_rails'
+# gem 'sunspot_solr'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 

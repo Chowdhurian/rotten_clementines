@@ -1,0 +1,5 @@
+<h4>search: enter any info you may have </h4>
+<%= form_tag("/search", method: "get", id: "search_form") do %>
+  <%= text_field_tag(:search, params[:search], placeholder: "search Rottens") %>
+  <%= submit_tag("search", name: nil) %>
+<% end %>

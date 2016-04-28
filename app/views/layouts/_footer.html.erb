@@ -2,8 +2,11 @@
   <small>
     <% if current_user %>
       signed in as <%= current_user.email %> (<%= link_to "log out", session_path("current"), method: :delete %>)
+      <% if current_user.admin? %>
+        | <%= link_to "admin page", admin_users_path %>
+      <% end %>
     <% else %>
-      <%= link_to "Log In", new_session_path %> | <%= link_to "Sign Up", new_user_path %>
+      <%= link_to "log in", new_session_path %> | <%= link_to "sign up", new_user_path %>
     <% end %>
   </small>
 </footer>

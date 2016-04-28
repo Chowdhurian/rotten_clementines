@@ -2,5 +2,6 @@
 <%= paginate @users %>
 <% @users.each do |user| %>
   <h4>email: <%= user.email %></h4>
-  <hr>
 <% end %>
+<hr>
+<%= paginate @users %>

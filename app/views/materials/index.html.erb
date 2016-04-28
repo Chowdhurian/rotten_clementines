@@ -1,6 +1,8 @@
 <h1>Rotten Clementines</h1>
 <%= link_to "Submit a film, short or television show!", new_material_path %>
 <hr>
+<%= render 'search_form' %>
+<hr>
 <% @materials.each do |material| %>
   <%= image_tag material.poster_image.thumbnail.url %>
   <h2><%= link_to material.title, material_path(material) %></h2>

@@ -3,8 +3,7 @@ class User < ActiveRecord::Base
 
   has_secure_password
 
-  validates :email, presence: true
-
+  validates :email, presence: true #need to validate email format
   paginates_per 1
 
   def full_name
