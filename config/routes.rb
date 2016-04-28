@@ -13,7 +13,7 @@ RottenClementines::Application.routes.draw do
   root to: 'materials#index'
 
   namespace :admin do
-    resources :users, only: [:index, :destroy]
+    resources :users, only: [:index, :edit, :update, :destroy]
   end
 
   # You can have the root of your site routed with "root"
