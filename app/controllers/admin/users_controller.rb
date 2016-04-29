@@ -6,6 +6,8 @@ class Admin::UsersController < AdminController
   def destroy
     @user = User.find(params[:id])
     @user.destroy
+
+    UserMailer.delete_notification_email(@user).deliver_now
     redirect_to admin_users_path
   end
 

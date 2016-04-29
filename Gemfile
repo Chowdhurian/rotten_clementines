@@ -44,6 +44,12 @@ gem 'mini_magick', '~> 4.3'
 # for pagination
 gem 'kaminari'
 
+# for fake data to test with
+gem 'faker'
+
+# for getting data from IMDB
+gem 'imdb', '~> 0.8'
+
 # for search functionality
 # gem 'sunspot_rails'
 # gem 'sunspot_solr'
