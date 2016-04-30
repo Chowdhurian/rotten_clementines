@@ -1,0 +1,28 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">RottenClementines</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><%= link_to "new", new_material_path %></li>
+      </ul>
+      <%= render 'layouts/search_form' %>
+      <ul class="nav navbar-nav navbar-right">
+        <% if current_user %>
+          <li><a href="#">signed in as <%= current_user.email %></a></li>
+          <li><%= link_to "log out", session_path("current"), method: :delete %></li>
+          <% if current_user.admin? %>
+            <li><%= link_to "admin page", admin_users_path %></li>
+          <% end %>
+        <% else %>
+          <li><%= link_to "log in", new_session_path %></li>
+          <li><%= link_to "sign up", new_user_path %></li>
+        <% end %>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
