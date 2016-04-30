@@ -33,7 +33,7 @@ group :doc do
 end
 
 # Use ActiveModel has_secure_password
-gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bcrypt-ruby', '~> 3.1.2'
 
 gem 'pry'
 
@@ -49,6 +49,9 @@ gem 'faker'
 
 # for getting data from IMDB
 gem 'imdb', '~> 0.8'
+
+# for nice webpages
+gem 'bootstrap-sass'
 
 # for search functionality
 # gem 'sunspot_rails'

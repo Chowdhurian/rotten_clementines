@@ -11,20 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160427030119) do
+ActiveRecord::Schema.define(version: 20160429230820) do
 
-  create_table "materials", force: true do |t|
-    t.string   "title"
-    t.string   "director"
+  create_table "materials", force: :cascade do |t|
+    t.string   "title",              limit: 255
+    t.string   "director",           limit: 255
     t.integer  "runtime_in_minutes"
     t.text     "description"
     t.datetime "release_date"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "poster_image"
+    t.string   "poster_image",       limit: 255
+    t.string   "poster_url"
   end
 
-  create_table "reviews", force: true do |t|
+  create_table "reviews", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "material_id"
     t.text     "text"
@@ -36,14 +37,14 @@ ActiveRecord::Schema.define(version: 20160427030119) do
   add_index "reviews", ["material_id"], name: "index_reviews_on_material_id"
   add_index "reviews", ["user_id"], name: "index_reviews_on_user_id"
 
-  create_table "users", force: true do |t|
-    t.string   "email"
-    t.string   "password_digest"
+  create_table "users", force: :cascade do |t|
+    t.string   "email",           limit: 255
+    t.string   "password_digest", limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "firstname"
-    t.string   "lastname"
-    t.boolean  "admin",           default: false
+    t.string   "firstname",       limit: 255
+    t.string   "lastname",        limit: 255
+    t.boolean  "admin",                       default: false
   end
 
 end

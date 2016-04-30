@@ -1,14 +1,21 @@
-<h1>Rotten Clementines</h1>
 <%= link_to "Submit a film, short or television show!", new_material_path %>
 <hr>
 <%= render 'search_form' %>
 <hr>
+<section id="pinBoot">
 <% @materials.each do |material| %>
-  <%= image_tag material.poster_image.thumbnail.url %>
-  <h2><%= link_to material.title, material_path(material) %></h2>
-  <h3><%= formatted_date(material.release_date) %></h3>
-  <h4>Dir. <%= material.director %> | <%= material.runtime_in_minutes %> minutes</h4>
-  <p><%= material.description %></p>
-  <p>Average rating<%= material.review_average %>/10</p>
-  <hr>
+    <div class="white-panel">
+      <% if material.poster_image? %>
+        <%=  image_tag material.poster_image.thumbnail.url %>
+      <% elsif material.poster_url? %>
+        <%=  image_tag material.poster_url %>
+      <% end %>
+      <h2><%= link_to material.title, material_path(material) %></h2>
+      <h3><%= formatted_date(material.release_date) %></h3>
+      <h4>Dir. <%= material.director %> | <%= material.runtime_in_minutes %> minutes</h4>
+      <p><%= material.description %></p>
+      <p>Average rating<%= material.review_average %>/10</p>
+      <hr>
+    </div>
 <% end %>
+</section>

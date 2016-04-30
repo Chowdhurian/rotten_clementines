@@ -7,6 +7,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <h1>RottenClementines</h1>
+      <h6>The 100 freshest clementines</h6>
+    </div>
+  </nav>
+
   <% flash.each do |key, value| %>
     <%= content_tag(:div, value) %>
   <% end %>
